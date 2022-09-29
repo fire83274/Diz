@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .click {
+            display: none;
+        }
+        body {
+            height: 1000px;
+        }
+    </style>
+    <button class="click" id="bu">Вернуть</button>
+    <canvas width="8000" height="6000" id="canvas" onclick="click2()"></canvas>        
+    <script>
+      function draw() {
+  var canvas = document.getElementById('canvas');
+  var bu = document.getElementById("bu");
+  var c2 = canvas.getContext('2d');
+        c2.fillStyle = "green";
+        c2.beginPath();
+        c2.moveTo(0, 0);
+        c2.lineTo(0, 350);
+        c2.lineTo(200, 350);
+        c2.lineTo(200, 0);
+        c2.fill();
+        c2.fillStyle = "black";
+        c2.beginPath();
+        c2.moveTo(160, 0);
+        c2.lineTo(160, 40);
+        c2.lineTo(200, 40);
+        c2.lineTo(200, 0);
+        c2.fill();
+        c2.strokeStyle = "white";
+        c2.lineWidth = 4;
+        c2.beginPath();
+        c2.moveTo(160, 0);
+        c2.lineTo(160, 40);
+        c2.lineTo(200, 40);
+        c2.lineTo(200, 0);
+        c2.moveTo(160, 0);
+        c2.lineTo(200, 40);
+        c2.lineTo(200, 0);
+        c2.moveTo(200, 0);
+        c2.lineTo(160, 40);
+        c2.closePath();
+        c2.stroke();
+  if (canvas.getContext){
+    var ctx = canvas.getContext('2d');
+        ctx.fillStyle = "black";
+    for(var i=0;i<4;i++){
+      for(var j=0;j<3;j++){
+        ctx.beginPath();
+        var x = 25+j*50; // x coordinate
+        var y = 25+i*50; // y coordinate
+        var radius = 20; // Arc radius
+        var startAngle = 0; // Starting point on circle
+        var endAngle = Math.PI+(Math.PI*j)/2; // End point on circle
+        var anticlockwise = i%2==0 ? false : true; // clockwise or anticlockwise
+
+        ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);
+
+        if (i>1){
+          ctx.fill();
+        } else {
+          ctx.stroke();
+        }
+      }
+    }
+  }
+}
+draw();
+var c = canvas.getContext('2d');
+        c.fillStyle = "white";
+        c.font = "bold "+12+"pt Arial ";
+        c.fillText("Супер мега банер", 10, 300);
+
+canvas.onclick = function() {
+    canvas.classList.add("click");
+    bu.classList.remove("click");
+
+}
+bu.onclick = function() {
+    canvas.classList.remove("click");
+    bu.classList.add("click");
+}
+    </script>
+</body>
+</html>

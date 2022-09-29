@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="940" height="600" id="canvas"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var c = canvas.getContext('2d');
+        c.fillStyle = "blue";
+        c.strokeStyle = "white";
+        c.lineWidth = 4;
+        c.beginPath();
+        c.moveTo(0, 600);
+        c.lineTo(0, 300);
+        c.bezierCurveTo(200, 300, 400, 0, 940, 300);
+        c.lineTo(940, 600);
+        c.closePath();
+        c.fill();
+        c.stroke();
+        
+        c.beginPath();
+        c.moveTo(0, 600);
+        c.lineTo(0, 400);
+        c.bezierCurveTo(200, 400, 400, 0, 940, 400);
+        c.lineTo(940, 600);
+        c.closePath();
+        c.fill();
+        c.stroke();
+        
+        c.beginPath();
+        c.moveTo(0, 600);
+        c.lineTo(0, 500);
+        c.bezierCurveTo(200, 500, 400, 0, 940, 500);
+        c.lineTo(940, 600);
+        c.closePath();
+        c.fill();
+        c.stroke();
+    </script>
+</body>
+</html>

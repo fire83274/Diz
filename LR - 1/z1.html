@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="800" height="600" id="canvas"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var c = canvas.getContext('2d');
+        c.fillStyle = "green";
+        c.beginPath();
+        c.moveTo(330, 180);
+        c.lineTo(350, 180);
+        c.lineTo(350, 140);
+        c.lineTo(330, 140);
+        c.fill();
+        c.fillStyle = "yellow";
+        c.strokeStyle = "blue";
+        c.beginPath();
+        c.moveTo(200, 200);
+        c.lineTo(300, 150);
+        c.lineTo(400, 200);
+        c.closePath();
+        c.fill();
+        c.stroke();
+        c.fillStyle = "blue";
+        c.strokeStyle = "yellow";
+        c.beginPath();
+        c.moveTo(220, 200);
+        c.lineTo(220, 300);
+        c.lineTo(380, 300);
+        c.lineTo(380, 200);
+        c.fill();
+        c.stroke();
+    </script>
+</body>
+</html>
